@@ -13,7 +13,7 @@ class IndexValue
     }
 
 }
-// 오래걸릴것같은..
+
 class Program
 {
     static void Main(string[] args)
