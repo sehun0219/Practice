@@ -61,7 +61,7 @@ class DynamicArray2 // extent array length by twice
                 arr[i] = arr[i + 1];
             }
         }
-        //arr[arr.Length + 1] = _Element;
+        arr[arr.Length + 1] = _Element;
 
     }
 

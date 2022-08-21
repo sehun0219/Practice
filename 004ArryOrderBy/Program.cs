@@ -1,5 +1,179 @@
-﻿
-public static class Extensions
+﻿// 특정숫자의 배열을 만듬
+// 숫자를 입력받음
+// 배열을 유지하면서 배열을 늘리고 추가하는 숫자를 넣으면 그숫자가 뒤에 붙음
+// 그런데 숫자를 늘리면서 정렬까지 됨
+
+
+class Array
+{
+
+    private int count { get; set; }
+
+    private int value { get; set; }
+
+    public Array() 
+    { 
+        this.count = count;
+        this.value = value;
+    }
+    public int GetIndexNum(int[] _arr)
+    {
+        return _arr.Length;
+    }
+
+    public void AddIndex(int[] _arr)
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            string? num = Console.ReadLine();
+            int num2 = Convert.ToInt32(num); 
+            _arr[i] = num2;
+            count++;
+        }
+    }
+
+    public int AddValue()
+    {
+        string val = Console.ReadLine();
+        return value = Convert.ToInt32(val);
+    }
+
+    public void SortbyAscendingOrder(int[] _arr)
+    {
+
+    }
+    
+
+
+}
+
+/*class DynamicArray 
+{
+    private int[] arr;
+    private const int GROWTH_FACTOR = 2;
+
+    public int Count { get; private set; }
+    public int Capacity { get { return arr.Length; } }
+    public DynamicArray(int Capacity = 4)
+    {
+        arr = new int[Capacity];
+        Count = 0;
+    }
+    public void Add(int _element)
+    {
+        if (Count >= Capacity)
+        {
+            int newSize = Capacity * GROWTH_FACTOR;
+            int[] temp = new int[newSize];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                temp[i] = arr[i];
+            }
+            arr = temp;
+        }
+        arr[arr.Length - 1] = _element;
+        Count++;
+    }
+    public int? Get(int index)
+    {
+        if (index > Count - 1 || index < 0)
+        {
+            Console.WriteLine("unable to find the element on there. ");
+            return null;
+        }
+        return arr[index];
+    }
+
+    public void Remove(int _Element)
+    {
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i] == _Element)
+            {
+                arr[i] = arr[arr.Length + 1];
+                arr[i] = arr[i + 1];
+            }
+        }
+        arr[arr.Length + 1] = _Element;
+
+    }
+
+}*/
+
+
+
+
+
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        //1. 다섯개가 들어갈수 있는 배열에 다섯개 숫자를 받아서 정렬한다.
+        int[] arr = new int[6];
+        for (int i = 0; i < 5; i++)
+        {
+            string input = Console.ReadLine();
+            int input2 = Convert.ToInt32(input);
+            arr[i] = input2;
+        }
+        string val = Console.ReadLine();
+        int value = Convert.ToInt32(val);
+        
+        for (int i = 0; i < arr.Length; i++)
+        {
+            int cur = arr[i];
+
+            if (value < cur)
+            {
+                for ( int j = arr.Length - 1; j > i; j-- )
+                {
+                    arr[j] = arr[j - 1];
+                }
+                arr[i] = value;
+                break;
+            }
+            
+        }
+
+        foreach (var item in arr)
+        {
+            Console.WriteLine(item);
+        }
+        //프린트 배열
+
+
+
+
+        //3. 인덱스 0번부터 값을 리턴해서
+        //
+        //입력된 숫자와 비교하고 입력된숫자보다 작으면
+        //다음인덱스로 가고
+        //크면 그 인덱스 앞에 값이되도록 함
+
+        // 뒤에 남아있는 숫자들이오른쪽으로 이동한다.
+
+
+        //4. 추가로 받은 숫자를 포함해서 다시정렬한뒤 프린트한다.
+
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*public static class Extensions
 {
     public static T[] Append<T>(this T[] array, T NewValue)
     {
@@ -17,8 +191,8 @@ public static class Extensions
         result[array.Length] = NewValue;
         return result;
     }
-}
-class Program
+}*/
+/*class Program
 {
     static void Main(string[] args)
     {
@@ -51,25 +225,5 @@ class Program
             }
             
         }
-
-//더 해볼수있는것들.
-
-//1. 6개짜리 배열이 생기고 뒤에
-//2. 7개의 인덱스가 있는 배열을 다시 만든다
-
-//3.그 배열로 자료를 옮긴다.
-//4.마지막에 추가된 값을 정렬해서 출력한다.
-
-//5.사용자가 숫자를 더추가하고 싶으면 1번을 누르고 프로그램을 종료하고 싶으면 2번을 누른다. 
-
-//6. 1번을 누르면 마지막에 출력된 배열에서 한개 더 긴배열을 갖는 새로운 배열을 만든다.
-
-//7.새로운 배열에 사용자가 입력한 값이 마지막에 추가되게 만든다.
-
-//8.새로 만든 배열을 출력한다.
-
-
-
-
     }
-}
+}*/

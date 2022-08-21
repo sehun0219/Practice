@@ -69,8 +69,8 @@ partial class Block // 블록은 일곱종류.. 가장 긴 일자 블록은 4칸
 
     public void RandomBlockType()
     {
-        //int RandomIndex = NewRandom.Next((int) BLOCKTYPE.BT_I, (int) BLOCKTYPE.BT_MAX);
-        int RandomIndex = (int) BLOCKTYPE.BT_I;
+        int RandomIndex = NewRandom.Next((int) BLOCKTYPE.BT_I, (int) BLOCKTYPE.BT_MAX);
+        //int RandomIndex = (int) BLOCKTYPE.BT_I;
         CurBlockType = (BLOCKTYPE)RandomIndex;
     }
     private void SettingBlock(BLOCKTYPE _Type, BDIR _Dir)

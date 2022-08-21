@@ -52,7 +52,43 @@ front = (front +1) % A.length; 를 쓰면되는데 코드 구현하면서 이해
    큐가 가득찼는지 확인하는 방법은 레어와 프론트가 같은지 체크하면 되는데 
    식으로는 (Rear + 1) % A.Length == front 로 표현가능
 4. DEqueue할때는 먼저 큐가 비어있는지 체크하고
-   비어있지 않으면 데이터를 읽는다.  프론트를 하나 증가시킨다.
+   비어있지 않으면 데이터를 읽는다.  프론트를 하나 증가시킨다. 프론트를 하나 증가시키는 식은 Front = (Front +1)%A.Length
+   큐에서 마지막 요소를 읽을 때 즉 프론트와 레어가 같을때 데이터를 읽어낸 후 프론트와 레어를 -1로 표시한다.
+
+
+
+연결리스트로 구현한 큐
+연결리스트를 이용해서 큐를 구현하는 로직
+큐에서 새 데이터를 추가하기 위해서 연결리스트의 마지막 노드에 새 노드를 추가한다.
+디큐는 연결리스트의 첫 노드를 읽어오면 된다.
+
+연결리스트를 구현할때 헤드와 테일을 갖게하고 테일을 통해 인큐하고 헤드를 통해 디큐하면 간단히 구현할 수 있다. 
+
+
+
+.NET에서 의 큐
+닷넷에서는 큐의 요소가 object타입인 
+
+system.collections.queue
+system.collections.generic.queue<T>
+ConcurrentQueue<T> 
+
+이렇게 세 클래스가 있다.
+
+Queue<int> q = new Queue<int>();
+q.Enqueue(1);
+q.Enqueue(2);
+q.Enqueue(3);
+
+int data = q.Dequeue();
+console.writheline(data);
+
+foreach(var item in q)
+{
+	console.writeline(item);
+}
+
+이런식으로 적용가능
 
 
 
