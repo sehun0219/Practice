@@ -1,4 +1,9 @@
 ﻿
+//
+//arr 2차원 배열의 {1,2,3}, { 4,5,6}, { 7,8,9}
+//의 값을 초기화 하고 다음 결과 값과 값이 각 행이 1행씩 밀리고
+
+//마지막 행이 첫번째 행으로 돌아오는 프로그램을 만드시오.
 
 class Program
 {
@@ -10,8 +15,9 @@ class Program
             new int[] { 4, 5, 6 },
             new int[] { 7, 8, 9 },
         };
+
         int[] temp = new int[1];
-        
+
 
         for (int i = 0; i < arr.Length; i++)
         {
@@ -25,5 +31,13 @@ class Program
             }
             Console.WriteLine();
         }
+
+
+
     }
 }
+
+
+
+
+
