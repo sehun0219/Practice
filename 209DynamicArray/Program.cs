@@ -9,31 +9,59 @@ class Program
     {
         int[][] arr = new int[][]
         {
-            new int [] { 90, 100, 40, 60 },
-            new int [] { 80, 90 },
-            new int [] { 100, 80, 20 }
+             new int [] { 90, 100 },
+             new int [] { 80, 90 },
+             new int [] { 100, 80, 3 }
         };
 
-        // 여기서부터
-        for (int i = 0; i < 3; i++)
+        int sum = 0;
+        for (int i = 0; i < arr.Length; i++)
         {
-            arr[i][2] = arr[i][0] + arr[i][1];
-            arr[i][3] = arr[i][2] / 2;
-        }
-        Console.WriteLine("국어 영어 합계 평균");
-
-        for (int i = 0; i < 3; i++)
-        {
-            for (int j = 0; j < 4; j++)
+            sum = 0;
+            for (int j = 0; j < arr[i].Length; j++)
             {
-                Console.Write(arr[i][j]+ "   ");
+                sum += arr[i][j];
             }
-            Console.WriteLine();
+            Console.WriteLine(sum);
         }
-        
+
+
     }
 }
 
+/**
+ * sum1은 인트값.
+ * 첫번째 배열의 끝까지 돌면서 더한 값
+ * 
+ * 
+ * 
+ */
+
+
+
+//int[][] arr = new int[][]
+//        {
+//            new int [] { 90, 100, 0, 0 },
+//            new int [] { 80, 90, 0, 0 },
+//            new int [] { 100, 80, 0, 0 }
+//        };
+
+//// 여기서부터
+//for (int i = 0; i < 3; i++)
+//{
+//    arr[i][2] = arr[i][0] + arr[i][1];
+//    arr[i][3] = arr[i][2] / 2;
+//}
+//Console.WriteLine("국어 영어 합계 평균");
+
+//for (int i = 0; i < 3; i++)
+//{
+//    for (int j = 0; j < 4; j++)
+//    {
+//        Console.Write(arr[i][j] + "   ");
+//    }
+//    Console.WriteLine();
+//}
 
 
 

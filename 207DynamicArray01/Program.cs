@@ -24,7 +24,7 @@ class Program
         
 
         arrPrint(arr);
-        addTwoArr(arr, 1);
+        addArr(arr, 2);
         Console.WriteLine("---------");
         arrPrint(arr);
     }
@@ -39,18 +39,16 @@ class Program
             Console.WriteLine();
         }
     }
-    static void addOneArr(int[] Array, int PlusValue)
+    static void addArr(int[][] Array, int PlusValue)
     {
         for (int i = 0; i < Array.Length; i++)
         {
-            Array[i] = Array[i]+ PlusValue;
+            for (int j = 0; j < Array[i].Length; j++)
+            {
+                Array[i][j] = Array[i][j] + PlusValue;
+            }
+           
         }
     }
-    static void addTwoArr(int[][] Array, int PlusValue)
-    {
-        for (int i = 0; i < Array.Length; i++)
-        {
-            addOneArr(Array[i], PlusValue);
-        }
-    }
+    
 }
